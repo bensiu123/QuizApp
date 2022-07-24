@@ -1,16 +1,15 @@
-# fireship_quizapp
+# Flutter Firebase
 
-A new Flutter project.
+Reference: [Flutter Firebase Course - Fireship.io](https://fireship.io/courses/flutter-firebase/)
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 👨‍🎤 Build a complete Flutter app with Firebase
+- 🐦 Master most common Flutter widgets
+- 🔏 User Authentication (Apple, Google, Anonymous)
+- ⚒️ State Management with Provider
+- 🔥 Model relational Firestore data
+- 🎭 Animation for realtime data streams
+- ⚓ Organize large Flutter projects
+- 🤖 Firestore -> Dart Classes with JSON Serializable
+- 🚀 Deploy to the Apple App Store and Google Play
