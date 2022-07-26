@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
-import './auth.dart';
-import './models.dart';
+import 'auth.dart';
+import 'models.dart';
 
 class FirestoreService {
   final _db = FirebaseFirestore.instance;

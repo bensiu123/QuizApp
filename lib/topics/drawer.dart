@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:fireship_quizapp/services/models.dart';
-import 'package:fireship_quizapp/topics/quiz_list.dart';
+import '../services/models.dart';
+import 'quiz_list.dart';
 
 class TopicsDrawer extends StatelessWidget {
   final List<Topic> topics;

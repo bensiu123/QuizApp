@@ -1,4 +1,4 @@
-import 'package:fireship_quizapp/services/auth.dart';
+import '../services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';

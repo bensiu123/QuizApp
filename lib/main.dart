@@ -1,14 +1,14 @@
-import 'package:fireship_quizapp/routes.dart';
-import 'package:fireship_quizapp/services/firestore.dart';
-import 'package:fireship_quizapp/theme.dart';
+import 'routes.dart';
+import 'services/firestore.dart';
+import 'theme.dart';
 import 'package:flutter/material.dart';
 
 // Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
-import 'package:fireship_quizapp/firebase_options.dart';
-import 'package:fireship_quizapp/services/models.dart';
+import 'firebase_options.dart';
+import 'services/models.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

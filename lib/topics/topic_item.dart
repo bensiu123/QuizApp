@@ -1,9 +1,8 @@
-import 'package:fireship_quizapp/shared/progress_bar.dart';
-import 'package:fireship_quizapp/topics/topic.dart';
+import '../shared/progress_bar.dart';
+import 'topic.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:fireship_quizapp/services/models.dart';
+import '../services/models.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;

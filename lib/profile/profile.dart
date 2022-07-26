@@ -1,9 +1,8 @@
-import 'package:fireship_quizapp/services/auth.dart';
-import 'package:fireship_quizapp/shared/error.dart';
+import '../services/auth.dart';
+import '../shared/error.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:fireship_quizapp/services/models.dart';
+import '../services/models.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

@@ -1,11 +1,11 @@
-import 'package:fireship_quizapp/services/firestore.dart';
-import 'package:fireship_quizapp/shared/error.dart';
-import 'package:fireship_quizapp/topics/topic_item.dart';
+import '../services/firestore.dart';
+import '../shared/error.dart';
+import 'topic_item.dart';
 import 'package:flutter/material.dart';
-import 'package:fireship_quizapp/services/models.dart';
-import 'package:fireship_quizapp/shared/bottom_nav.dart';
-import 'package:fireship_quizapp/shared/loading.dart';
-import 'package:fireship_quizapp/topics/drawer.dart';
+import '../services/models.dart';
+import '../shared/bottom_nav.dart';
+import '../shared/loading.dart';
+import 'drawer.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({Key? key}) : super(key: key);

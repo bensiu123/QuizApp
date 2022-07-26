@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-
-import 'package:fireship_quizapp/services/models.dart';
+import '../services/models.dart';
 
 class QuizList extends StatelessWidget {
   const QuizList({

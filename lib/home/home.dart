@@ -1,8 +1,7 @@
-import 'package:fireship_quizapp/services/auth.dart';
-import 'package:fireship_quizapp/topics/topics.dart';
 import 'package:flutter/material.dart';
-
 import '../login/login.dart';
+import '../services/auth.dart';
+import '../topics/topics.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
