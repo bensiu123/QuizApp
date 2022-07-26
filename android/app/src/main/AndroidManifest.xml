@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.ectest.fireship_quizapp">
-   <application
-        android:label="fireship_quizapp"
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="Fireship Quizapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
