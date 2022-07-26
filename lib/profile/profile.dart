@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
+import '../login/login.dart';
 import '../services/auth.dart';
 import '../services/models.dart';
 import '../shared/error.dart';
@@ -44,6 +46,13 @@ class ProfileScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline6,
               ),
               const Spacer(),
+              if (AuthService().user?.isAnonymous ?? false)
+                LoginButton(
+                  icon: FontAwesomeIcons.google,
+                  text: 'Sign in with Google',
+                  loginMethod: AuthService().signInWithGoogle,
+                  color: Colors.blue,
+                ),
               Text(
                 report.total.toString(),
                 style: Theme.of(context).textTheme.headline2,
