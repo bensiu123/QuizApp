@@ -16,10 +16,6 @@ class TopicsScreen extends StatelessWidget {
     return FutureBuilder<List<Topic>>(
       future: FirestoreService().getTopics(),
       builder: ((context, snapshot) {
-        print(
-          "TopicsScreen: ${snapshot.connectionState}: [${DateTime.now().toIso8601String()}]",
-        );
-
         if (snapshot.connectionState == ConnectionState.waiting) {
           // loading
           return const LoadingScreen();

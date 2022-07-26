@@ -39,9 +39,6 @@ class _AppState extends State<App> {
       // Initialize FlutterFire:
       future: _initialization,
       builder: (context, snapshot) {
-        print(
-            'App: ${snapshot.connectionState}: [${DateTime.now().toIso8601String()}]');
-
         // Check for errors
         if (snapshot.hasError) {
           return const Center(

@@ -14,31 +14,25 @@ class AuthService {
   Future<void> signInAnonymously() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
-    } on FirebaseAuthException catch (e) {
-      print(e.code);
-      print(e.message);
-    }
+    } on FirebaseAuthException catch (e) {}
   }
 
   Future<void> signInWithGoogle() async {
     try {
-      print('signInWithGoogle');
       final googleUser = await GoogleSignIn(
         clientId: Platform.isIOS
             ? '775118302580-m6361s2v9nl2lkeb2bisdjqf65ggg37p.apps.googleusercontent.com'
             : null,
       ).signIn();
-      print(googleUser);
 
       if (googleUser == null) return;
 
       final googleAuth = await googleUser.authentication;
-      print(googleAuth);
+
       final authCredential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
-      print(authCredential);
 
       var user = this.user;
 
@@ -50,10 +44,7 @@ class AuthService {
       } else {
         await FirebaseAuth.instance.signInWithCredential(authCredential);
       }
-    } on FirebaseAuthException catch (e) {
-      print(e.code);
-      print(e.message);
-    }
+    } on FirebaseAuthException catch (e) {}
   }
 
   String generateNonce([int length = 32]) {
@@ -90,7 +81,7 @@ class AuthService {
     );
 
     // Create an `OAuthCredential` from the credential returned by Apple.
-    final oauthCredential = OAuthProvider("apple.com").credential(
+    final oauthCredential = OAuthProvider('apple.com').credential(
       idToken: appleCredential.identityToken,
       rawNonce: rawNonce,
     );
