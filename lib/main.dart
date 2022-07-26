@@ -7,6 +7,8 @@ import 'firebase_options.dart';
 import 'routes.dart';
 import 'services/firestore.dart';
 import 'services/models.dart';
+import 'shared/error.dart';
+import 'shared/loading.dart';
 import 'theme.dart';
 
 void main() {
@@ -41,12 +43,7 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         // Check for errors
         if (snapshot.hasError) {
-          return const Center(
-            child: Text(
-              'Error',
-              textDirection: TextDirection.ltr,
-            ),
-          );
+          return ErrorMessage(message: snapshot.error.toString());
         }
 
         // Once complete, show your application
@@ -62,12 +59,7 @@ class _AppState extends State<App> {
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return const Center(
-          child: Text(
-            'Loading',
-            textDirection: TextDirection.ltr,
-          ),
-        );
+        return const LoadingScreen();
       },
     );
   }
