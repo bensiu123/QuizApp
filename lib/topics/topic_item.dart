@@ -1,8 +1,9 @@
-import '../shared/progress_bar.dart';
-import 'topic.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../services/models.dart';
+import '../shared/progress_bar.dart';
+import 'topic.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;

@@ -1,11 +1,12 @@
-import '../services/firestore.dart';
-import '../shared/error.dart';
-import 'topic_item.dart';
 import 'package:flutter/material.dart';
+
+import '../services/firestore.dart';
 import '../services/models.dart';
 import '../shared/bottom_nav.dart';
+import '../shared/error.dart';
 import '../shared/loading.dart';
 import 'drawer.dart';
+import 'topic_item.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({Key? key}) : super(key: key);
