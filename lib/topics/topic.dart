@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/models.dart';
+import 'quiz_list.dart';
 
 class TopicScreen extends StatelessWidget {
   final Topic topic;
@@ -26,7 +27,8 @@ class TopicScreen extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
-          )
+          ),
+          QuizList(topic: topic)
         ],
       ),
     );
