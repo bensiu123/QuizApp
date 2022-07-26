@@ -40,14 +40,16 @@ class AuthService {
       );
       print(authCredential);
 
-      await (user?.linkWithCredential(authCredential) ??
-          FirebaseAuth.instance.signInWithCredential(authCredential));
+      var user = this.user;
 
-      // if (user != null) {
-      //   await user?.linkWithCredential(authCredential);
-      // } else {
-      //   await FirebaseAuth.instance.signInWithCredential(authCredential);
-      // }
+      // await (user?.linkWithCredential(authCredential) ??
+      //     FirebaseAuth.instance.signInWithCredential(authCredential));
+
+      if (user != null) {
+        await user.linkWithCredential(authCredential);
+      } else {
+        await FirebaseAuth.instance.signInWithCredential(authCredential);
+      }
     } on FirebaseAuthException catch (e) {
       print(e.code);
       print(e.message);
@@ -93,10 +95,15 @@ class AuthService {
       rawNonce: rawNonce,
     );
 
+    var user = this.user;
+
     // Sign in the user with Firebase. If the nonce we generated earlier does
     // not match the nonce in `appleCredential.identityToken`, sign in will fail.
-    return await (user?.linkWithCredential(oauthCredential) ??
-        FirebaseAuth.instance.signInWithCredential(oauthCredential));
+    if (user != null) {
+      return await user.linkWithCredential(oauthCredential);
+    } else {
+      return await FirebaseAuth.instance.signInWithCredential(oauthCredential);
+    }
   }
 
   Future<void> signOut() async {
