@@ -1,7 +1,9 @@
+import 'package:fireship_quizapp/shared/progress_bar.dart';
 import 'package:fireship_quizapp/topics/topic.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../services/models.dart';
+import 'package:fireship_quizapp/services/models.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;
@@ -48,11 +50,56 @@ class TopicItem extends StatelessWidget {
                     softWrap: false,
                   ),
                 ),
-              )
+              ),
+              TopicProgress(topic: topic),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class TopicProgress extends StatelessWidget {
+  final Topic topic;
+
+  const TopicProgress({Key? key, required this.topic}) : super(key: key);
+
+  Widget _progressCount(Topic topic, Report report) {
+    int totalQuizzes = topic.quizzes.length;
+    int completedQuizzes = report.topics[topic.id]?.length ?? 0;
+    return Padding(
+      padding: const EdgeInsets.only(left: 8),
+      child: Text(
+        '$completedQuizzes / $totalQuizzes',
+        style: const TextStyle(fontSize: 10, color: Colors.grey),
+      ),
+    );
+  }
+
+  double _calculateProgress(Topic topic, Report report) {
+    try {
+      int totalQuizzes = topic.quizzes.length;
+      int completedQuizzes = report.topics[topic.id]?.length ?? 0;
+      return completedQuizzes / totalQuizzes;
+    } catch (err) {
+      return 0.0;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Report report = Provider.of<Report>(context);
+    return Row(
+      children: [
+        _progressCount(topic, report),
+        Expanded(
+          child: AnimatedProgressBar(
+            value: _calculateProgress(topic, report),
+            height: 8,
+          ),
+        )
+      ],
     );
   }
 }

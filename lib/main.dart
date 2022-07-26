@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
-import 'firebase_options.dart';
-import 'services/models.dart';
+import 'package:fireship_quizapp/firebase_options.dart';
+import 'package:fireship_quizapp/services/models.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
